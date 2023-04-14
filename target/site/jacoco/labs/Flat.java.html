@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Flat.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">UnitTests</a> &gt; <a href="index.source.html" class="el_package">labs</a> &gt; <span class="el_source">Flat.java</span></div><h1>Flat.java</h1><pre class="source lang-java linenums">package labs;
+
+public class Flat {//Класс квартира
+
+    public Room a, b, c;
+    public float add_area;
+    public String name;
+
+
+<span class="fc" id="L10">    public Flat(Room one, Room two, Room three, float area, String name){</span>
+<span class="fc" id="L11">        a = one;</span>
+<span class="fc" id="L12">        b = two;</span>
+<span class="fc" id="L13">        c = three;</span>
+<span class="fc" id="L14">        add_area = area;</span>
+<span class="fc" id="L15">        this.name = name;</span>
+<span class="fc" id="L16">    }</span>
+
+
+    public void Display() {
+<span class="nc" id="L20">        System.out.println(&quot;Комната 1:&quot;);</span>
+<span class="nc" id="L21">        a.Display();</span>
+<span class="nc" id="L22">        System.out.println(&quot;-----------------------------&quot;);</span>
+<span class="nc" id="L23">        System.out.println(&quot;Комната 2:&quot;);</span>
+<span class="nc" id="L24">        b.Display();</span>
+<span class="nc" id="L25">        System.out.println(&quot;-----------------------------&quot;);</span>
+<span class="nc" id="L26">        System.out.println(&quot;Комната 3:&quot;);</span>
+<span class="nc" id="L27">        c.Display();</span>
+<span class="nc" id="L28">        System.out.println(&quot;-----------------------------&quot;);</span>
+<span class="nc" id="L29">    }</span>
+
+    public void Read() {
+<span class="nc" id="L32">        System.out.println(&quot;Название: &quot;+name +&quot;\n&quot;);</span>
+<span class="nc" id="L33">        System.out.println(&quot;Комната 1:&quot;);</span>
+<span class="nc" id="L34">        a.Read();</span>
+<span class="nc" id="L35">        System.out.println(&quot;-----------------------------&quot;);</span>
+<span class="nc" id="L36">        System.out.println(&quot;Комната 2:&quot;);</span>
+<span class="nc" id="L37">        b.Read();</span>
+<span class="nc" id="L38">        System.out.println(&quot;-----------------------------&quot;);</span>
+<span class="nc" id="L39">        System.out.println(&quot;Комната 3:&quot;);</span>
+<span class="nc" id="L40">        c.Read();</span>
+<span class="nc" id="L41">        System.out.println(&quot;-----------------------------&quot;);</span>
+<span class="nc" id="L42">    }</span>
+
+    public float Average_area() {
+<span class="fc" id="L45">        float square = a.square + b.square + c.square + add_area;</span>
+<span class="fc" id="L46">        int count_people = (int) (a.count_people + b.count_people + c.count_people);</span>
+<span class="fc" id="L47">        return square / count_people;</span>
+    }
+
+    public Room Min_area() {
+
+<span class="pc bpc" id="L52" title="2 of 6 branches missed.">        if(a.square==0 || b.square==0 || c.square == 0){</span>
+<span class="fc" id="L53">            throw new NullPointerException(&quot;all areas are equal to 0&quot;);</span>
+        }
+<span class="fc" id="L55">        float a_square = a.Square_on_people();</span>
+<span class="fc" id="L56">        float b_square = b.Square_on_people();</span>
+<span class="fc" id="L57">        float c_square = c.Square_on_people();</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (a_square &lt; b_square) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            if (a_square &lt; c_square)</span>
+            {
+<span class="fc" id="L61">                return a;</span>
+            }
+<span class="fc" id="L63">            else return c;</span>
+        }
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        else if (b_square &lt; c_square) {</span>
+
+<span class="fc" id="L67">            return b;</span>
+        }
+        else
+        {
+<span class="fc" id="L71">            return c;</span>
+        }
+
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

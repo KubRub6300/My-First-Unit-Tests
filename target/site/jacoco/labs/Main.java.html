@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">UnitTests</a> &gt; <a href="index.source.html" class="el_package">labs</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package labs;
+
+<span class="nc" id="L3">public class Main {</span>
+    public static void main(String[] args) {
+<span class="nc" id="L5">        Room r = new Room();</span>
+<span class="nc" id="L6">        Room r1 = new Room();</span>
+<span class="nc" id="L7">        Room r2 = new Room();</span>
+
+<span class="nc" id="L9">        Flat flat = new Flat(r,r1,r2,0,&quot;квартира 35&quot;);</span>
+<span class="nc" id="L10">        flat.Read();</span>
+
+<span class="nc" id="L12">        System.out.println(&quot;\nИнформация о квартире:&quot;);</span>
+<span class="nc" id="L13">        flat.Display();</span>
+<span class="nc" id="L14">        System.out.println(&quot;Сердняя площадь на одного человека с учетом общей площади: &quot; + flat.Average_area());</span>
+<span class="nc" id="L15">        System.out.println(&quot;Комната с минимальной площадью на человека:&quot;);</span>
+<span class="nc" id="L16">        flat.Min_area().Display();</span>
+<span class="nc" id="L17">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

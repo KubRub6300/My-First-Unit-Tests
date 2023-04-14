@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Room.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">UnitTests</a> &gt; <a href="index.source.html" class="el_package">labs</a> &gt; <span class="el_source">Room.java</span></div><h1>Room.java</h1><pre class="source lang-java linenums">package labs;
+
+import java.util.Scanner;
+
+public class Room {//Класс комната
+    public float square;
+    public int count_people;
+<span class="fc" id="L8">    private Scanner sc = new Scanner(System.in);</span>
+
+
+
+<span class="fc" id="L12">    public Room(){</span>
+
+<span class="fc" id="L14">    }</span>
+
+<span class="fc" id="L16">    public Room(float square, int count_people){</span>
+<span class="fc" id="L17">        this.square = square;</span>
+<span class="fc" id="L18">        this.count_people = count_people;</span>
+<span class="fc" id="L19">    }</span>
+
+    public void Init(float sq, int cp) {
+<span class="fc" id="L22">        square = sq;</span>
+<span class="fc" id="L23">        count_people = cp;</span>
+<span class="fc" id="L24">    }</span>
+
+    public void Read() {
+<span class="nc" id="L27">        System.out.print(&quot;Площадь комнаты= &quot;);</span>
+<span class="nc" id="L28">        square = sc.nextFloat();</span>
+<span class="nc" id="L29">        System.out.print(&quot;Кол-во людей проживающих в комнате= &quot;);</span>
+<span class="nc" id="L30">        count_people = sc.nextInt();</span>
+<span class="nc" id="L31">    }</span>
+
+    public void Display() {
+<span class="nc" id="L34">        System.out.println(&quot;Площадь комнаты: &quot; + square);</span>
+<span class="nc" id="L35">        System.out.println(&quot;Кол-во людей проживающих в комнате: &quot; + count_people);</span>
+<span class="nc" id="L36">    }</span>
+
+    public float Square_on_people() {
+<span class="fc" id="L39">        return square / count_people;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
